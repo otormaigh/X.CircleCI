@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'realm-android'
+apply plugin: 'android-apt'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.0"
+    defaultConfig {
+        applicationId "ie.elliot.xcircleci"
+        minSdkVersion 21
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    println "$TEST_VALUE"
+}
+
+dependencies {
+    def RETROFIT_LIB = '2.1.0'
+    def SUPPORT_LIB = '24.0.0'
+    def BUTTERKNIFE_LIB = '8.1.0'
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+
+    compile "com.android.support:appcompat-v7:$SUPPORT_LIB"
+    compile "com.android.support:recyclerview-v7:$SUPPORT_LIB"
+    compile "com.android.support:design:$SUPPORT_LIB"
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha4'
+
+    compile "com.squareup.retrofit2:retrofit:$RETROFIT_LIB"
+    compile "com.squareup.retrofit2:converter-gson:$RETROFIT_LIB"
+    compile "com.squareup.retrofit2:adapter-rxjava:$RETROFIT_LIB"
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+
+    compile "com.jakewharton:butterknife:$BUTTERKNIFE_LIB"
+    apt "com.jakewharton:butterknife-compiler:$BUTTERKNIFE_LIB"
+    compile 'com.jakewharton.timber:timber:4.1.2'
+
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.1.6'
+
+    //RxPermissions
+    compile 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar'
+
+    compile 'com.roughike:bottom-bar:1.4.0'
+}
