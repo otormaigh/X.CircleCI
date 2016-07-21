@@ -26,12 +26,16 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
     println "$TEST_VALUE"
 }
 
 dependencies {
     def RETROFIT_LIB = '2.1.0'
-    def SUPPORT_LIB = '24.0.0'
+    def SUPPORT_LIB = '24.1.0'
     def BUTTERKNIFE_LIB = '8.1.0'
 
     compile fileTree(dir: 'libs', include: ['*.jar'])
