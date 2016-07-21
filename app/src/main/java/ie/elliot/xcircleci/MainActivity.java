@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+        fab.setOnClickListener(view -> Snackbar.make(view, BuildConfig.TEST_VALUE, Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show());
 
         ((TextView) findViewById(R.id.tvHelloWorld)).setText(BuildConfig.TEST_VALUE);
