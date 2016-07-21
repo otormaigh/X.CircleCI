@@ -30,7 +30,7 @@ android {
         abortOnError false
     }
 
-    println "$TEST_VALUE"
+    println rootProject.ext.test_value
 }
 
 dependencies {

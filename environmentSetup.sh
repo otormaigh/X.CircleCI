@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
-function copyEnvVarsToGradleProperties {
-    GRADLE_PROPERTIES=$HOME"/.gradle/gradle.properties"
-    export GRADLE_PROPERTIES
-    echo "Gradle Properties should exist at $GRADLE_PROPERTIES"
- 
-    if [ ! -f "$GRADLE_PROPERTIES" ]; then
-        echo "Gradle Properties does not exist"
- 
-        echo "Creating Gradle Properties file..."
-        touch $GRADLE_PROPERTIES
- 
-        echo "Writing TEST_API_KEY to gradle.properties..."
-        echo "TEST_VALUE=$TEST_VALUE_ENV_VAR" >> $GRADLE_PROPERTIES
-    fi
-}
+FILE_NAME='keys.gradle'
+cd "${0%/*}"
+
+if [ -e "$FILE_NAME" ]; then
+    echo "Removing Old $FILE_NAME Dir..."
+    rm -rf "$FILE_NAME"
+fi
+
+echo "Add keys to $FILE_NAME"
+echo "ext {" >> ${FILE_NAME}
+echo "    test_value='$TEST_VALUE_ENV_VAR'" >> ${FILE_NAME}
+echo "}" >> ${FILE_NAME}
