@@ -44,7 +44,6 @@ dependencies {
     compile "com.android.support:appcompat-v7:$SUPPORT_LIB"
     compile "com.android.support:recyclerview-v7:$SUPPORT_LIB"
     compile "com.android.support:design:$SUPPORT_LIB"
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha4'
 
     compile "com.squareup.retrofit2:retrofit:$RETROFIT_LIB"
     compile "com.squareup.retrofit2:converter-gson:$RETROFIT_LIB"
