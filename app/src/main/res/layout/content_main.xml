@@ -8,8 +8,9 @@
     tools:showIn="@layout/activity_main">
 
     <TextView
+        android:id="@+id/tvHelloWorld"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        tools:text="Hello World!" />
 
 </LinearLayout>
