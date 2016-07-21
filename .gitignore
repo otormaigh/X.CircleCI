@@ -1,10 +1,14 @@
+/config
 *.iml
 .gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
+local.properties
+.idea
+/.idea
 .DS_Store
 /build
 /captures
+/reports
+app/app.iml
+app/build
 
 keys.gradle
