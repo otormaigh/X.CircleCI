@@ -11,11 +11,11 @@ general:
         
 dependencies:
     pre:
-        - source environmentSetup.sh
         - ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --no-ui --all --filter "tools,platform-tools,android-24,extra-google-m2repository,extra-android-m2repository,extra-android-support"
         - echo y | android update sdk --no-ui --all --filter "build-tools-24.0.0"
         - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
 test:
     override:
+        - ./environmentSetup.sh
         - ./gradlew clean
         - ./gradlew build

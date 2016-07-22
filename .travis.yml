@@ -22,4 +22,5 @@ before_install:
 
 script:
   - ./environmentSetup.sh
-  - ./gradlew assemble
+  - ./gradlew clean
+  - ./gradlew build
