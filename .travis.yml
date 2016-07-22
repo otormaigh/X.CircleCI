@@ -18,4 +18,5 @@ before_install:
   - chmod +x gradlew
 
 script:
+  - ./environmentSetup.sh
   - ./gradlew assemble
