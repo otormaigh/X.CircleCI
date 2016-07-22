@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -ev
+
 FILE_NAME='keys.gradle'
 cd "${0%/*}"
 
