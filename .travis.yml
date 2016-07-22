@@ -16,6 +16,7 @@ jdk:
 before_install:
   # http://stackoverflow.com/questions/33820638/travis-yml-gradlew-permission-denied
   - chmod +x gradlew
+  - chmod +x environmentSetup.sh
 
 script:
   - ./environmentSetup.sh
